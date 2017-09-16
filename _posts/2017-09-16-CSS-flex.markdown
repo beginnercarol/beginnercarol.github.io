@@ -1,0 +1,34 @@
+---
+layout: post
+title: CSS Flex 布局
+date: 2017-09-16 00:00:00.000000000 +09:00
+tags: css
+---
+***
++ 容器 + 项目(item)
++ 项目的 `float` `vertical-align` `clear`失效
++ 默认两根轴: main axis (水平), cross axis(垂直),方向可以更改
++ 容器的属性:
+	1. `flex-direction`主轴的方向:
+`row`,`row-reverse`,`column`,`column-reverse`
+	2. `flex-wrap`换行的方式:
+`nowrap`,`wrap`,`wrap-reverse`
+	3. `flex-flow`
+	4. `justify-content`项目在主轴上的对齐方式:
+`flex-start`,`flex-end`,`center`,`space-between`,`space-around`
+	5. `align-items` 项目在交叉轴上如何对齐:
+`flex-start`,`flex-end`,`center`,`space-between`,`space-around`
+6. `align-content`多根轴线对齐方式(???)
+
++ 项目的属性:
+	1. `order:integer`
+项目的排列顺序,数字越小排列越靠前,可以为负数
+	2. `flex-grow:`
+允许项目变大.默认为0,全为1则平分
+	3. `flex-shrink:`
+允许项目变小,默认为1
+	4. `flex-basis:`
+定义在分配多余主轴空间之前,项目占据的主轴空间,可以像`width` `height`一样设定,占据固定空间,设为`auto`则为项目本来大小
+	5. `flex`是上面三个的简写形式 默认 0 1 auto
+	6. `align-self`允许单个项目拥有不同于容器定义的`align-item`,值同`align-item`
+
