@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>CSS Flex 布局</title>
-  <meta name="description" content="  容器 + 项目(item)  项目的 float vertical-align clear失效  默认两根轴: main axis (水平), cross axis(垂直),方向可以更改  容器的属性:          flex-direction主轴的方向:row,row-reverse,column,c...">
+  <title>XML 基础</title>
+  <meta name="description" content="  XML 可以定义自己的标签  用于传输数据  兼容各种系统,纯文本  XML 结构:">
   <meta name="author" content="Wei Wang">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="CSS Flex 布局">
-  <meta name="twitter:description" content="  容器 + 项目(item)  项目的 float vertical-align clear失效  默认两根轴: main axis (水平), cross axis(垂直),方向可以更改  容器的属性:          flex-direction主轴的方向:row,row-reverse,column,c...">
+  <meta name="twitter:title" content="XML 基础">
+  <meta name="twitter:description" content="  XML 可以定义自己的标签  用于传输数据  兼容各种系统,纯文本  XML 结构:">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="CSS Flex 布局">
-  <meta property="og:description" content="  容器 + 项目(item)  项目的 float vertical-align clear失效  默认两根轴: main axis (水平), cross axis(垂直),方向可以更改  容器的属性:          flex-direction主轴的方向:row,row-reverse,column,c...">
+  <meta property="og:title" content="XML 基础">
+  <meta property="og:description" content="  XML 可以定义自己的标签  用于传输数据  兼容各种系统,纯文本  XML 结构:">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2017/09/CSS-flex/">
+  <link rel="canonical" href="http://localhost:4000/2017/09/XML/">
   <link rel="alternate" type="application/rss+xml" title="Carol" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -122,50 +122,88 @@
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-09-16 00:00:00 +0900" itemprop="datePublished" class="post-meta__date date">2017-09-16</time> &#8226; <span class="post-meta__tags tags">css</span>
+      <time datetime="2017-09-17 13:57:00 +0900" itemprop="datePublished" class="post-meta__date date">2017-09-17</time> &#8226; <span class="post-meta__tags tags">fcc</span>
     </div>
-    <h1 class="post-title">CSS Flex 布局</h1>
+    <h1 class="post-title">XML 基础</h1>
   </header>
 
   <section class="post">
     <hr />
 <ul>
-  <li>容器 + 项目(item)</li>
-  <li>项目的 <code class="highlighter-rouge">float</code> <code class="highlighter-rouge">vertical-align</code> <code class="highlighter-rouge">clear</code>失效</li>
-  <li>默认两根轴: main axis (水平), cross axis(垂直),方向可以更改</li>
-  <li>容器的属性:
-    <ol>
-      <li><code class="highlighter-rouge">flex-direction</code>主轴的方向:
-<code class="highlighter-rouge">row</code>,<code class="highlighter-rouge">row-reverse</code>,<code class="highlighter-rouge">column</code>,<code class="highlighter-rouge">column-reverse</code></li>
-      <li><code class="highlighter-rouge">flex-wrap</code>换行的方式:
-<code class="highlighter-rouge">nowrap</code>,<code class="highlighter-rouge">wrap</code>,<code class="highlighter-rouge">wrap-reverse</code></li>
-      <li><code class="highlighter-rouge">flex-flow</code></li>
-      <li><code class="highlighter-rouge">justify-content</code>项目在主轴上的对齐方式:
-<code class="highlighter-rouge">flex-start</code>,<code class="highlighter-rouge">flex-end</code>,<code class="highlighter-rouge">center</code>,<code class="highlighter-rouge">space-between</code>,<code class="highlighter-rouge">space-around</code></li>
-      <li><code class="highlighter-rouge">align-items</code> 项目在交叉轴上如何对齐:
-<code class="highlighter-rouge">flex-start</code>,<code class="highlighter-rouge">flex-end</code>,<code class="highlighter-rouge">center</code>,<code class="highlighter-rouge">space-between</code>,<code class="highlighter-rouge">space-around</code>
-        <ol>
-          <li><code class="highlighter-rouge">align-content</code>多根轴线对齐方式(???)</li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>项目的属性:
-    <ol>
-      <li><code class="highlighter-rouge">order:integer</code>
-项目的排列顺序,数字越小排列越靠前,可以为负数</li>
-      <li><code class="highlighter-rouge">flex-grow:</code>
-允许项目变大.默认为0,全为1则平分</li>
-      <li><code class="highlighter-rouge">flex-shrink:</code>
-允许项目变小,默认为1</li>
-      <li><code class="highlighter-rouge">flex-basis:</code>
-定义在分配多余主轴空间之前,项目占据的主轴空间,可以像<code class="highlighter-rouge">width</code> <code class="highlighter-rouge">height</code>一样设定,占据固定空间,设为<code class="highlighter-rouge">auto</code>则为项目本来大小</li>
-      <li><code class="highlighter-rouge">flex</code>是上面三个的简写形式 默认 0 1 auto</li>
-      <li><code class="highlighter-rouge">align-self</code>允许单个项目拥有不同于容器定义的<code class="highlighter-rouge">align-item</code>,值同<code class="highlighter-rouge">align-item</code></li>
-    </ol>
-  </li>
+  <li>XML 可以定义自己的标签</li>
+  <li>用于传输数据</li>
+  <li>兼容各种系统,纯文本</li>
+  <li>XML 结构:</li>
 </ul>
 
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span><span class="c">&lt;!--声明--&gt;</span>
+<span class="nt">&lt;root&gt;</span><span class="c">&lt;!--根元素,必须要有--&gt;</span>
+  <span class="nt">&lt;child&gt;</span><span class="c">&lt;!--子元素--&gt;</span>
+    <span class="nt">&lt;subchild&gt;</span>.....<span class="nt">&lt;/subchild&gt;</span>
+  <span class="nt">&lt;/child&gt;</span>
+<span class="nt">&lt;/root&gt;</span><span class="c">&lt;!--必须关闭每一个标签--&gt;</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>类似于 DOM 树的概念,每个元素都可以拥有文本内容和属性</li>
+  <li>必须关闭标签</li>
+  <li>大小写敏感</li>
+  <li>嵌套顺序必须一致</li>
+  <li>必须有根元素</li>
+  <li>属性必须加引号:(单双均可)
+<code class="highlighter-rouge">&lt;note date="2017-09-17"&gt;...&lt;/note&gt;</code></li>
+  <li>实体引用(同 HTML)</li>
+  <li>注释(同 HTML)</li>
+  <li>连续多个空格会被保留</li>
+  <li>以 LF(换行符)存储换行(插花:CR 指回车符)</li>
+  <li>命名规则:
+ a. 不能以数字 or 标点符号开始,也不能以”xml/XML/Xml”开始
+ b. 不能包含空格
+ c. 无保留字符
+ d. 避免<code class="highlighter-rouge">- . :</code>
+ e. 下划线<code class="highlighter-rouge">_</code>可以</li>
+  <li>避免使用属性:(属性不易扩展)
+做到信息最细分割
+最佳实例:</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;note&gt;
+&lt;date&gt;//不要作为 note 的属性,方便提取数据
+  &lt;day&gt;08&lt;/day&gt;
+  &lt;month&gt;08&lt;/month&gt;
+  &lt;year&gt;2008&lt;/year&gt;
+&lt;/date&gt;
+&lt;to&gt;George&lt;/to&gt;
+&lt;from&gt;John&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don't forget the meeting!&lt;/body&gt;
+&lt;/note&gt;
+</code></pre>
+</div>
+
+<ul>
+  <li>使用<code class="highlighter-rouge">id</code>属性用于区分 XML 元素是可以接受的(同 HTML)</li>
+  <li>
+    <p><strong>元数据</strong>(关于数据的数据/信息)应该被保存为属性,而<strong>数据就该被存储为数据</strong></p>
+  </li>
+  <li>
+    <p><a href="https://www.evernote.com/shard/s245/nl/50832658/2daf541d-0bbe-4aa9-8908-469b9df9c9a1/">DTD(document type definition)</a> 函数声明,定义 XML 文件的结构</p>
+  </li>
+  <li>XML 文档的错误会终止 XML 程序</li>
+  <li>XML 文件不会直接显示为 HTML 文件</li>
+  <li>CSS 可以用来格式化 XML(不推荐,建议用 XSLT)</li>
+</ul>
+
+<p><code class="highlighter-rouge"><span class="cp">&lt;?xml-stylesheet type="text/css" href="cd_catalog.css"?&gt;</span></code></p>
+
+<ul>
+  <li>XSLT</li>
+</ul>
+
+<p><code class="highlighter-rouge"><span class="cp">&lt;?xml-stylesheet type="text/xsl" href="simple.xsl"?&gt;</span></code></p>
+
+<p>建议在服务器上转换 XML</p>
 
   </section>
 </article>
@@ -175,12 +213,20 @@
    
    <div class="read-more-item">
        <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/09/ASP.net/" title="link to ASP.net 基础">ASP.net 基础</a></h2>
+       <p class="excerpt">阅读Node 入门时的一些总结和想法.异步编程的直接体现就是回调  创建一个 HTTP 服务器://server.jsvar http = require("HTTP");http.createServer(function(request,response){  response.writeHead(200,{"Content-type":"text/plain"});  response.write("Hello,world!");  response.end();}).listen(...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-09-18 00:05:00 +0900" class="post-list__meta--date date">2017-09-18</time> &#8226; <span class="post-list__meta--tags tags">fcc</span><a class="btn-border-small" href=/2017/09/ASP.net/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
        <h2 class="post-list__post-title post-title"><a href="/2017/09/FCC-smallesCommonMultiple/" title="link to FCC 找出能被两个给定参数和它们之间的连续数字整除的最小公倍数">FCC 找出能被两个给定参数和它们之间的连续数字整除的最小公倍数</a></h2>
        <p class="excerpt">辗转相除法思路1：=====待求数组(allNum)的每一个数字都去除以质数数组(primes)中的元素，只要有一个元素能被整除就推入commonFactor原理理解错了，做了很久。code：function smallestCommon(arr){	var min = Math.min(arr[0],arr[1]);	var max = Math.max(arr[0],arr[1]);	var allNum = [];	var primes = [];//质数	var commonFac...&hellip;</p>
        <div class="post-list__meta"><time datetime="2017-09-16 20:58:00 +0900" class="post-list__meta--date date">2017-09-16</time> &#8226; <span class="post-list__meta--tags tags">fcc</span><a class="btn-border-small" href=/2017/09/FCC-smallesCommonMultiple/>继续阅读</a></div>
    </div>
-   
-   
    
 </section>
 

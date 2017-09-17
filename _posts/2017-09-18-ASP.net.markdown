@@ -1,0 +1,117 @@
+---
+layout: post
+title: ASP.net 基础
+date: 2017-09-18 00:05:00.000000000 +09:00
+tags: fcc
+---
+***
+
+阅读[Node 入门](https://www.nodebeginner.org/index-zh-cn.html)时的一些总结和想法.
+
+***
+
+异步编程的直接体现就是**回调**
+
+***
++ 创建一个 HTTP 服务器:
+
+```
+
+//server.js
+var http = require("HTTP");
+
+http.createServer(function(request,response){
+  response.writeHead(200,{"Content-type":"text/plain"});
+  response.write("Hello,world!");
+  response.end();
+}).listen(8888);//端口号
+
+```
+
++ 为了做到模块封装,在主程序(index.js)中调用,需要将函数封装:
+
+```
+//server.js
+var http = require("http");
+
+function start(){
+  http.createServer(function(request,response){
+    console.log("Server has accepted your request.");
+    response.writeHead(200,{"Content-type":"text/plain"});
+    response.write("Hello");
+    response.end();
+  }).listen(8888);
+  console.log("Server is working...");
+}
+
+exports.start = start;
+
+```
+
+
+```
+//index.js
+var server = require("./server.js");
+server.start();
+```
+
++ js 可以将函数作为参数传进另一个函数,这一点好好体会一下,不需要 require('./router.js')
+
+```
+//router.js
+var url = require("url");
+function router (pathname) {
+  console.log("Request for:"+pathname);
+}
+exports.router = router;
+```
+
+
+```
+//server.js
+var http = require("http");
+var url = require("url");
+
+function start(router){//在这里传递了一个函数 router 作为参数
+  function onRequest(request,response){
+    var pathname = url.parse(request.url).pathname;
+    console.log("Request for:"+pathname+" received.");
+
+    router(pathname);//js 可以传递函数作为参数,因此不需要 require('./router.js')
+
+    response.writeHead(200,{"Content-type":"text/plain"});
+    response.write("Hello");
+    response.end();
+  }
+
+  http.createServer(onRequest).listen(8888);
+  console.log("Server is working...");
+}
+
+exports.start = start;
+```
+
+By the way, console 的内容当然是在服务器端才能看见!
+
++  接下来考虑的是 router.js 针对每一个不同的 url 请求应该有不同的请求响应函数. 新增加一个模块`requestHandler.js`, 在里面写好相关的请求响应函数.
+
++  该怎么把这个请求响应函数与 router.js 关联起来??
+>使用依赖注入可以让路由和请求处理程序之间的耦合更加松散，也因此能让路由的重用性更高。
+
+选择将请求响应函数包装成对象,通过 index.js 注入到 router 中.
+
+```
+//index.js
+var server = require("./server");
+var router = require("./router");
+var requestHandle = require("./requestHandle");
+
+var handler = {};
+handler["/"] = requestHandle.start;
+handler["/start"] = requestHandle.start;
+handler["/upload"] = requestHandle.upload;
+
+
+server.start(router.router,handler);
+```
+越来越像 java ~
