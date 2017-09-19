@@ -5,9 +5,189 @@
     <description>Carol的前端修行</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Sep 2017 00:11:02 +0800</pubDate>
-    <lastBuildDate>Mon, 18 Sep 2017 00:11:02 +0800</lastBuildDate>
+    <pubDate>Tue, 19 Sep 2017 16:49:04 +0800</pubDate>
+    <lastBuildDate>Tue, 19 Sep 2017 16:49:04 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>CSS  圣杯布局</title>
+        <description>&lt;hr /&gt;
+&lt;p&gt;&lt;a href=&quot;https://alistapart.com/article/holygrail&quot;&gt;参考资料 holygrail&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;中间列应该优先出现在布局中.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;position:relative;float:left;&lt;/code&gt;&lt;/strong&gt;
+事实上顺序是先 float.再 relative.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;float + margin-left:-100%&lt;/code&gt; 让 left 元素来到 main-container 的 left-padding, 因为 float 是抵住 padding 的,接下来要让 left 进入到 padding 内部,就需要&lt;code class=&quot;highlighter-rouge&quot;&gt;position:relative + left:-left 的宽度&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main-container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main column&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;main&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left column&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;left&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right column&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;right&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;footer&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;footer&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;min-width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;550px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.main-container&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;padding-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.column&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;aqua&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;yellow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nc&quot;&gt;.footer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;both&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;为了响应式布局,body 需要增加&lt;code class=&quot;highlighter-rouge&quot;&gt;min-width&lt;/code&gt;以避免页面崩坏.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;min-width&lt;/code&gt;设置为多少比较合适?
+在上面的情况下,&lt;code class=&quot;highlighter-rouge&quot;&gt;.right&lt;/code&gt;其实是在 center 内部的,所以&lt;code class=&quot;highlighter-rouge&quot;&gt;min-width&lt;/code&gt;设为200px+200px+150px 即可
+但是在这种情况下:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt;其实是在 &lt;code class=&quot;highlighter-rouge&quot;&gt;container&lt;/code&gt;的右 padding 中,故 body 的&lt;code class=&quot;highlighter-rouge&quot;&gt;min-width&lt;/code&gt;应该为 200px+200px+150px+150px&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nc&quot;&gt;.right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Tue, 19 Sep 2017 15:46:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/CSS-Holygrail-layout/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/CSS-Holygrail-layout/</guid>
+        
+        <category>css</category>
+        
+        <category>,layout</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CSS Grid</title>
+        <description>&lt;hr /&gt;
+&lt;p&gt;flex 是一维布局, grid 是二维布局
+***&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;设置网格布局之后,column,float,clear,vertical-align 无效&lt;/li&gt;
+  &lt;li&gt;网格布局可以依赖于媒体查询,根据不同的上下文重新定义布局.&lt;/li&gt;
+  &lt;li&gt;不需要在 HTML 中使用特定的标签,所有的布局都是在 CSS 中完成的.&lt;/li&gt;
+  &lt;li&gt;父元素将&lt;code class=&quot;highlighter-rouge&quot;&gt;display&lt;/code&gt;设置为:&lt;code class=&quot;highlighter-rouge&quot;&gt;display:grid/inline-grid/subgrid(?)&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;subgrid&lt;/code&gt;是指这个元素的父元素就是网格,继承父元素的行和列大小.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;网格容器内所有的子元素会自动变成网格项目,设置行(&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-rows&lt;/code&gt;)和列(&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-columns&lt;/code&gt;)大小,
+    &lt;ul&gt;
+      &lt;li&gt;父容器中可以放多个子容器(item)
+        &lt;ul&gt;
+          &lt;li&gt;若只设置&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-rows&lt;/code&gt;则默认列为1&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-rows&lt;/code&gt;设置的参数为 item 的高&lt;/li&gt;
+          &lt;li&gt;若 item 个数多于设置的参数,剩下的 item 高度不定(?)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;设置&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-columns&lt;/code&gt;即列数.
+        &lt;ul&gt;
+          &lt;li&gt;设置每行的列数,若列数多于 item 的个数,自然一行就能放下&lt;/li&gt;
+          &lt;li&gt;若列数小于 item 的个数,则换行&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;而当设置了&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-colums&lt;/code&gt;之后,可能就没有这么多行了,因此&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-rows&lt;/code&gt;的参数再依次作用在行上面(只有一行就只会用到第一个参数).但剩下的高度会撑开父容器(神奇).&lt;/li&gt;
+      &lt;li&gt;也可以像 flex 一样设置每一列的宽度: 使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fr&lt;/code&gt;为单位即可.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;行或列的最小/最大尺寸
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;minmx(min,max)&lt;/code&gt;接受任何长度值,也接受&lt;code class=&quot;highlighter-rouge&quot;&gt;auto&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;重复行或列&lt;code class=&quot;highlighter-rouge&quot;&gt;repeat()&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;repeat()&lt;/code&gt;属性接受两个参数: 网格轨道(行或者列)应该重复的次数,每个轨道的尺寸.
+        &lt;ul&gt;
+          &lt;li&gt;其实最终效果就相当于网格纸&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;间距&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-column-gap&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;grid-row-gap&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;通过网格线定位 grid item:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-row/column-start:2;&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-row/column-end:3;&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;索引从1开始&lt;/li&gt;
+          &lt;li&gt;row 即行号&lt;/li&gt;
+          &lt;li&gt;column 即列号&lt;/li&gt;
+          &lt;li&gt;简写形式:
+            &lt;ul&gt;
+              &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-area:row-start/column-start/row-end/column-end&lt;/code&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;通过网格线定位也可以合并单元格&lt;/li&gt;
+      &lt;li&gt;自定义网格线名称:
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-rows:[row1-start] 100px [...]&lt;/code&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;grid-template-area&lt;/code&gt;:
+        &lt;ul&gt;
+          &lt;li&gt;优点:高度自对齐&lt;/li&gt;
+          &lt;li&gt;按照单元格来命名:&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;grid-template-areas: &quot;header header header header header&quot;
+                     &quot;sidebar content content content content&quot;
+                     &quot;footer footer footer footer footer&quot;;//包括 gap 也要算在&quot;单元格&quot;个数内
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sun, 17 Sep 2017 23:05:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/CSS-Grid/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/CSS-Grid/</guid>
+        
+        <category>css</category>
+        
+        <category>layout</category>
+        
+        
+      </item>
     
       <item>
         <title>ASP.net 基础</title>

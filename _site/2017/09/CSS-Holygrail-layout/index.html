@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>CSS  圣杯布局</title>
+  <meta name="description" content="参考资料 holygrail">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CSS  圣杯布局">
+  <meta name="twitter:description" content="参考资料 holygrail">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CSS  圣杯布局">
+  <meta property="og:description" content="参考资料 holygrail">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/09/CSS-Holygrail-layout/">
+  <link rel="alternate" type="application/rss+xml" title="Carol" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Carol 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Carol logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Carol" class="blog-button">Carol</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Stay hungry stay foolish</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Carol的前端修行</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">Blog</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/beginnercarol" title="@beginnercarol 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:carolpangyaoyao@163.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-slate"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-09-19 16:46:00 +0900" itemprop="datePublished" class="post-meta__date date">2017-09-19</time> &#8226; <span class="post-meta__tags tags">css,layout</span>
+    </div>
+    <h1 class="post-title">CSS  圣杯布局</h1>
+  </header>
+
+  <section class="post">
+    <hr />
+<p><a href="https://alistapart.com/article/holygrail">参考资料 holygrail</a></p>
+
+<hr />
+
+<ul>
+  <li>中间列应该优先出现在布局中.</li>
+  <li><strong><code class="highlighter-rouge">position:relative;float:left;</code></strong>
+事实上顺序是先 float.再 relative.
+<code class="highlighter-rouge">float + margin-left:-100%</code> 让 left 元素来到 main-container 的 left-padding, 因为 float 是抵住 padding 的,接下来要让 left 进入到 padding 内部,就需要<code class="highlighter-rouge">position:relative + left:-left 的宽度</code></li>
+</ul>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main-container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main column"</span><span class="nt">&gt;</span>main<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left column"</span><span class="nt">&gt;</span>left<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right column"</span><span class="nt">&gt;</span>right<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"footer"</span><span class="nt">&gt;</span>footer<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nt">body</span><span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+  <span class="nl">min-width</span><span class="p">:</span><span class="m">550px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.main-container</span><span class="p">{</span>
+  <span class="nl">padding-left</span><span class="p">:</span><span class="m">200px</span><span class="p">;</span>
+  <span class="nl">padding-right</span><span class="p">:</span><span class="m">150px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.column</span><span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span><span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">float</span><span class="p">:</span><span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.main</span><span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span><span class="m">100%</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span><span class="no">aqua</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.left</span><span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span><span class="m">200px</span><span class="p">;</span>
+  <span class="nl">right</span><span class="p">:</span><span class="m">200px</span><span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span><span class="m">-100%</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span><span class="no">yellow</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.right</span><span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span><span class="m">150px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span><span class="no">pink</span><span class="p">;</span>
+  <span class="nl">margin-right</span><span class="p">:</span><span class="m">-150px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.footer</span><span class="p">{</span>
+  <span class="nl">clear</span><span class="p">:</span><span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>为了响应式布局,body 需要增加<code class="highlighter-rouge">min-width</code>以避免页面崩坏.
+<code class="highlighter-rouge">min-width</code>设置为多少比较合适?
+在上面的情况下,<code class="highlighter-rouge">.right</code>其实是在 center 内部的,所以<code class="highlighter-rouge">min-width</code>设为200px+200px+150px 即可
+但是在这种情况下:
+<code class="highlighter-rouge">right</code>其实是在 <code class="highlighter-rouge">container</code>的右 padding 中,故 body 的<code class="highlighter-rouge">min-width</code>应该为 200px+200px+150px+150px</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code>  <span class="nc">.right</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">150px</span><span class="p">;</span>
+    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">-150px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span><span class="no">pink</span><span class="p">;</span>
+    <span class="nl">position</span><span class="p">:</span><span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">right</span><span class="p">:</span><span class="m">-150px</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre>
+</div>
+
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/09/CSS-Grid/" title="link to CSS Grid">CSS Grid</a></h2>
+       <p class="excerpt">flex 是一维布局, grid 是二维布局***  设置网格布局之后,column,float,clear,vertical-align 无效  网格布局可以依赖于媒体查询,根据不同的上下文重新定义布局.  不需要在 HTML 中使用特定的标签,所有的布局都是在 CSS 中完成的.  父元素将display设置为:display:grid/inline-grid/subgrid(?)          subgrid是指这个元素的父元素就是网格,继承父元素的行和列大小.        网...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-09-18 00:05:00 +0900" class="post-list__meta--date date">2017-09-18</time> &#8226; <span class="post-list__meta--tags tags">csslayout</span><a class="btn-border-small" href=/2017/09/CSS-Grid/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2017-09-19 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
+        <span class="footer__copyright">本站采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2017</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

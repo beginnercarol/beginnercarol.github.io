@@ -1,0 +1,50 @@
+---
+layout: post
+title: CSS Grid
+date: 2017-09-18 00:05:00.000000000 +09:00
+tags: css  layout
+---
+***
+flex 是一维布局, grid 是二维布局
+***
++ 设置网格布局之后,column,float,clear,vertical-align 无效
++ 网格布局可以依赖于媒体查询,根据不同的上下文重新定义布局.
++ 不需要在 HTML 中使用特定的标签,所有的布局都是在 CSS 中完成的.
++ 父元素将`display`设置为:`display:grid/inline-grid/subgrid(?)`  
+  + `subgrid`是指这个元素的父元素就是网格,继承父元素的行和列大小.
++ 网格容器内所有的子元素会自动变成网格项目,设置行(`grid-template-rows`)和列(`grid-template-columns`)大小,
+  + 父容器中可以放多个子容器(item)
+    + 若只设置`grid-template-rows`则默认列为1
+    + `grid-template-rows`设置的参数为 item 的高
+    + 若 item 个数多于设置的参数,剩下的 item 高度不定(?)
+  + 设置`grid-template-columns`即列数.
+    + 设置每行的列数,若列数多于 item 的个数,自然一行就能放下
+    + 若列数小于 item 的个数,则换行
+  + 而当设置了`grid-template-colums`之后,可能就没有这么多行了,因此`grid-template-rows`的参数再依次作用在行上面(只有一行就只会用到第一个参数).但剩下的高度会撑开父容器(神奇).
+  + 也可以像 flex 一样设置每一列的宽度: 使用`fr`为单位即可.
++ 行或列的最小/最大尺寸
+  + `minmx(min,max)`接受任何长度值,也接受`auto`
++ 重复行或列`repeat()`
+  + `repeat()`属性接受两个参数: 网格轨道(行或者列)应该重复的次数,每个轨道的尺寸.
+    + 其实最终效果就相当于网格纸
+  + 间距`grid-column-gap` & `grid-row-gap`
+  + 通过网格线定位 grid item:
+    + `grid-row/column-start:2;`
+    + `grid-row/column-end:3;`
+    + 索引从1开始
+    + row 即行号
+    + column 即列号
+    + 简写形式:
+      + `grid-area:row-start/column-start/row-end/column-end`
+  + 通过网格线定位也可以合并单元格
+  + 自定义网格线名称:
+    + `grid-template-rows:[row1-start] 100px [...]`
+  + `grid-template-area`:
+    + 优点:高度自对齐
+    + 按照单元格来命名:
+    
+```
+grid-template-areas: "header header header header header"
+                     "sidebar content content content content"
+                     "footer footer footer footer footer";//包括 gap 也要算在"单元格"个数内
+```

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>CSS Grid</title>
+  <meta name="description" content="flex 是一维布局, grid 是二维布局***  设置网格布局之后,column,float,clear,vertical-align 无效  网格布局可以依赖于媒体查询,根据不同的上下文重新定义布局.  不需要在 HTML 中使用特定的标签,所有的布局都是在 CSS 中完成的.  父元素将display设置...">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CSS Grid">
+  <meta name="twitter:description" content="flex 是一维布局, grid 是二维布局***  设置网格布局之后,column,float,clear,vertical-align 无效  网格布局可以依赖于媒体查询,根据不同的上下文重新定义布局.  不需要在 HTML 中使用特定的标签,所有的布局都是在 CSS 中完成的.  父元素将display设置...">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CSS Grid">
+  <meta property="og:description" content="flex 是一维布局, grid 是二维布局***  设置网格布局之后,column,float,clear,vertical-align 无效  网格布局可以依赖于媒体查询,根据不同的上下文重新定义布局.  不需要在 HTML 中使用特定的标签,所有的布局都是在 CSS 中完成的.  父元素将display设置...">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/09/CSS-Grid/">
+  <link rel="alternate" type="application/rss+xml" title="Carol" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Carol 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Carol logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Carol" class="blog-button">Carol</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Stay hungry stay foolish</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Carol的前端修行</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">Blog</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/beginnercarol" title="@beginnercarol 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:carolpangyaoyao@163.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-slate"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-09-18 00:05:00 +0900" itemprop="datePublished" class="post-meta__date date">2017-09-18</time> &#8226; <span class="post-meta__tags tags">csslayout</span>
+    </div>
+    <h1 class="post-title">CSS Grid</h1>
+  </header>
+
+  <section class="post">
+    <hr />
+<p>flex 是一维布局, grid 是二维布局
+***</p>
+<ul>
+  <li>设置网格布局之后,column,float,clear,vertical-align 无效</li>
+  <li>网格布局可以依赖于媒体查询,根据不同的上下文重新定义布局.</li>
+  <li>不需要在 HTML 中使用特定的标签,所有的布局都是在 CSS 中完成的.</li>
+  <li>父元素将<code class="highlighter-rouge">display</code>设置为:<code class="highlighter-rouge">display:grid/inline-grid/subgrid(?)</code>
+    <ul>
+      <li><code class="highlighter-rouge">subgrid</code>是指这个元素的父元素就是网格,继承父元素的行和列大小.</li>
+    </ul>
+  </li>
+  <li>网格容器内所有的子元素会自动变成网格项目,设置行(<code class="highlighter-rouge">grid-template-rows</code>)和列(<code class="highlighter-rouge">grid-template-columns</code>)大小,
+    <ul>
+      <li>父容器中可以放多个子容器(item)
+        <ul>
+          <li>若只设置<code class="highlighter-rouge">grid-template-rows</code>则默认列为1</li>
+          <li><code class="highlighter-rouge">grid-template-rows</code>设置的参数为 item 的高</li>
+          <li>若 item 个数多于设置的参数,剩下的 item 高度不定(?)</li>
+        </ul>
+      </li>
+      <li>设置<code class="highlighter-rouge">grid-template-columns</code>即列数.
+        <ul>
+          <li>设置每行的列数,若列数多于 item 的个数,自然一行就能放下</li>
+          <li>若列数小于 item 的个数,则换行</li>
+        </ul>
+      </li>
+      <li>而当设置了<code class="highlighter-rouge">grid-template-colums</code>之后,可能就没有这么多行了,因此<code class="highlighter-rouge">grid-template-rows</code>的参数再依次作用在行上面(只有一行就只会用到第一个参数).但剩下的高度会撑开父容器(神奇).</li>
+      <li>也可以像 flex 一样设置每一列的宽度: 使用<code class="highlighter-rouge">fr</code>为单位即可.</li>
+    </ul>
+  </li>
+  <li>行或列的最小/最大尺寸
+    <ul>
+      <li><code class="highlighter-rouge">minmx(min,max)</code>接受任何长度值,也接受<code class="highlighter-rouge">auto</code></li>
+    </ul>
+  </li>
+  <li>重复行或列<code class="highlighter-rouge">repeat()</code>
+    <ul>
+      <li><code class="highlighter-rouge">repeat()</code>属性接受两个参数: 网格轨道(行或者列)应该重复的次数,每个轨道的尺寸.
+        <ul>
+          <li>其实最终效果就相当于网格纸</li>
+        </ul>
+      </li>
+      <li>间距<code class="highlighter-rouge">grid-column-gap</code> &amp; <code class="highlighter-rouge">grid-row-gap</code></li>
+      <li>通过网格线定位 grid item:
+        <ul>
+          <li><code class="highlighter-rouge">grid-row/column-start:2;</code></li>
+          <li><code class="highlighter-rouge">grid-row/column-end:3;</code></li>
+          <li>索引从1开始</li>
+          <li>row 即行号</li>
+          <li>column 即列号</li>
+          <li>简写形式:
+            <ul>
+              <li><code class="highlighter-rouge">grid-area:row-start/column-start/row-end/column-end</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>通过网格线定位也可以合并单元格</li>
+      <li>自定义网格线名称:
+        <ul>
+          <li><code class="highlighter-rouge">grid-template-rows:[row1-start] 100px [...]</code></li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">grid-template-area</code>:
+        <ul>
+          <li>优点:高度自对齐</li>
+          <li>按照单元格来命名:</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>grid-template-areas: "header header header header header"
+                     "sidebar content content content content"
+                     "footer footer footer footer footer";//包括 gap 也要算在"单元格"个数内
+</code></pre>
+</div>
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/09/CSS-Holygrail-layout/" title="link to CSS  圣杯布局">CSS  圣杯布局</a></h2>
+       <p class="excerpt">参考资料 holygrail  中间列应该优先出现在布局中.  position:relative;float:left;事实上顺序是先 float.再 relative.float + margin-left:-100% 让 left 元素来到 main-container 的 left-padding, 因为 float 是抵住 padding 的,接下来要让 left 进入到 padding 内部,就需要position:relative + left:-left 的宽度&lt;di...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-09-19 16:46:00 +0900" class="post-list__meta--date date">2017-09-19</time> &#8226; <span class="post-list__meta--tags tags">css,layout</span><a class="btn-border-small" href=/2017/09/CSS-Holygrail-layout/>继续阅读</a></div>
+   </div>
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/09/ASP.net/" title="link to ASP.net 基础">ASP.net 基础</a></h2>
+       <p class="excerpt">阅读Node 入门时的一些总结和想法.异步编程的直接体现就是回调  创建一个 HTTP 服务器://server.jsvar http = require("HTTP");http.createServer(function(request,response){  response.writeHead(200,{"Content-type":"text/plain"});  response.write("Hello,world!");  response.end();}).listen(...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-09-18 00:05:00 +0900" class="post-list__meta--date date">2017-09-18</time> &#8226; <span class="post-list__meta--tags tags">fcc</span><a class="btn-border-small" href=/2017/09/ASP.net/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2017-09-19 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
+        <span class="footer__copyright">本站采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2017</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
