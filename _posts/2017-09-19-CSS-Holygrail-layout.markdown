@@ -50,7 +50,8 @@ body{
 .right{
   width:150px;
   background-color:pink;
-  margin-right:-150px;
+  /* margin-right:-150px;*/
+  margin-left:-150px;
 }
 .footer{
   clear:both;
@@ -72,4 +73,16 @@ body{
     right:-150px;
   }
 ```
+
+与
+
+```css
+.right{
+    width:150px;
+    margin-right: -150px;
+    background-color:pink;
+  }
+```
+
+效果是一样的!!下面使用 margin-right 减少了两行设置,且 min-width 可以减少一个 `.right`的宽度.
 
