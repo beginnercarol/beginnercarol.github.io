@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS  margin:0 auto;
-date: 2017-09-19 16:46:00.000000000 +09:00
+date: 2017-09-21 13:40:00.000000000 +09:00
 tags: css ,layout
 ---
 
