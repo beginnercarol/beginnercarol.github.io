@@ -145,14 +145,16 @@
 }
 </code></pre>
 </div>
-
 <p>修改为relative 之后,float 并不失效,而是根据浮动后的位置再进行 relative 定位.
 一般用于把 在下一行的元素提到上一行来</p>
 
 <hr />
-<p>之前提到<a href="https://www.evernote.com/shard/s245/nl/50832658/1ea54eee-d03a-495c-8b80-66d929621789/">float 元素,百分值不适用</a>
-因此但凡这个元素是 float,就不能用百分值设置长和宽
-***”&gt;</p>
+<p>之前提到<a href="https://www.evernote.com/shard/s245/nl/50832658/1ea54eee-d03a-495c-8b80-66d929621789/">float 元素,百分值不适用</a></p>
+
+<p><del>因此但凡这个元素是 float,就不能用百分值设置长和宽</del>(完全搞错了意思)
+percentage:N/A 不是这个意思,只是说不支持 <code class="highlighter-rouge">float:xx%;</code>
+之所以百分比没有效果是因为用的是 height 百分比…
+***</p>
 
 
   </section>

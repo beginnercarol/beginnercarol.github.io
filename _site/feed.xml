@@ -5,8 +5,8 @@
     <description>Carol的前端修行</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Sep 2017 11:44:47 +0800</pubDate>
-    <lastBuildDate>Sat, 23 Sep 2017 11:44:47 +0800</lastBuildDate>
+    <pubDate>Sat, 23 Sep 2017 15:57:07 +0800</pubDate>
+    <lastBuildDate>Sat, 23 Sep 2017 15:57:07 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -28,14 +28,16 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
 &lt;p&gt;修改为relative 之后,float 并不失效,而是根据浮动后的位置再进行 relative 定位.
 一般用于把 在下一行的元素提到上一行来&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;之前提到&lt;a href=&quot;https://www.evernote.com/shard/s245/nl/50832658/1ea54eee-d03a-495c-8b80-66d929621789/&quot;&gt;float 元素,百分值不适用&lt;/a&gt;
-因此但凡这个元素是 float,就不能用百分值设置长和宽
-***”&amp;gt;&lt;/p&gt;
+&lt;p&gt;之前提到&lt;a href=&quot;https://www.evernote.com/shard/s245/nl/50832658/1ea54eee-d03a-495c-8b80-66d929621789/&quot;&gt;float 元素,百分值不适用&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;del&gt;因此但凡这个元素是 float,就不能用百分值设置长和宽&lt;/del&gt;(完全搞错了意思)
+percentage:N/A 不是这个意思,只是说不支持 &lt;code class=&quot;highlighter-rouge&quot;&gt;float:xx%;&lt;/code&gt;
+之所以百分比没有效果是因为用的是 height 百分比…
+***&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 23 Sep 2017 10:42:00 +0800</pubDate>
