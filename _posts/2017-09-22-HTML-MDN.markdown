@@ -1,0 +1,143 @@
+---
+layout: post
+title: HTML MDN Basics
+date: 2017-09-22 13:40:00.000000000 +09:00
+tags: css ,layout
+---
+
+***
+
+#### Block element
+>Block-level elements form a visible block on a page — they will appear on a new line from whatever content went before it, and any content that goes after it will also appear on a new line. Block-level elements tend to be **structural elements** on the page that represent, for example, paragraphs, lists, navigation menus, footers, etc. **A block-level element wouldn't be nested inside an inline element,** but it might be nested inside another block-level element.
+
+#### Inline element
+
+>Inline elements are those that are contained **within** block-level elements and surround only small parts of the document’s content, not entire paragraphs and groupings of content. An inline element will not cause a new line to appear in the document; they would normally appear inside a paragraph of text, for example an `<a>` element (hyperlink) or emphasis elements such as `<em>` or `<strong>`.
+
+
+#### Empty elements
+
+指没有两个标签,只有一个标签的元素如`<img>`
+
+
+#### Atributes
+
+##### Boolean Attributes
+
+如`<select multiple="multiple">` `<input type="text" disabled="disabled">`可以省略=及后面的内容
+
+#### Head
+
+##### meta
+
+`<meta charset="utf-8">`
+
+`name`:代表 meta 的类型.如:`name="author"`
+`content`:代表实际的内容,如`content="J.K. Rollin"`
+
+
+`<meta name="og:title" content="MDN">`
+
+>One effect of this is that when you link to MDN on facebook, the link appears along with an image and description: a richer experience for users.
+
+不太懂这个是起 什么作用
+
+##### Custom icon
+可以用其他格式
+放在与"index.html"同级目录下
+`<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">`
+
+#### lamguage
+
+`<html lang="en-US">`
+也可以在页面内某个需要出现其它语言 的元素内指定
+`<p lang="jp">....</p>`
+
+
+#### Text
+In HTML, every paragraph has to be wrapped in a `<p>` element
+In HTML, every heading has to be wrapped in a `<h1>~<h6>` element
+
+`<span>`标签并没有语义信息,只是在想要对某个部分使用样式的时候选择用他来包裹
+
+
+
+#### Lists
+Interesting: list-style 是存在在 padding 中的
+
+
+#### Presentational elements
+没有语义信息(semantic),不推荐使用,使用 css 样式取代
+`<b> <i> <u>`在html5中有了新的含义
+
+#### Hyperlink
+
++ 尽量使用相对路径
++ link 名称 简洁明了
++ 如果是要下载 或者其他流媒体:
++ `<a href="###">Download the book(PDF,10MB)</a>`
+此外,下载的最好添加一个 `download`属性,以给下载的文件一个默认文件名:
+`<a href="###" download="book.pdf">Download the book(PDF,10MB)</a>`
+
++ mailto
+`<a href="mailto:carolpangyaoyao@163.com?subject='Report'&body='Hello,I would like to ...'">`
+
+<a href="mailto:carolpangyaoyao@163.com?subject='Report'&body='Hello,I would like to ...'">Contact ME by email</a>
+
+***
+#### Description lists
+```
+<dl>
+	<dt>Titile</dt>
+	<dd>Description</dd>
+</dl>
+```
+
+#### Quotations
+
+##### Blockquotes
+`<blockquote cite="https://www.google.com">...</blockquote>`
+
+
+##### Inline quote
+`<q cite="">...</q>`
+
+
+#### Citations
+`<cite>` 作用 引用/参考
+`<p> This para is cited from<a href="www.mdn.com"><cite>MDN</cite></a></p>`
+ 
+#### Abbreviations
+`<abbr title="Full Name">FN</abbr>`
+
+
+
+#### Address
+
+#### Superscript & subscript
+
+`<sup> & <sub>`
+
+#### Representing computer code
+
+`<code>`: 基本的代码
+`<pre>`: 保留空格
+`<var>`: 高亮变量
+`<kbd>`: 标记键盘输入的内容
+`<samp>`:  程序输出的内容
+
+#### Marking times and dates
+
+`<time datetime="2017-09-22">22rd,September,2017</time>`
+
+***
+
+效果如下:
+<time datetime="2017-09-22">22rd,September,2017</time>
+
+***
+提供 一个 机器可以阅读的 时间, 标签内的格式不统一, 机器无法识别
+
+
+
+

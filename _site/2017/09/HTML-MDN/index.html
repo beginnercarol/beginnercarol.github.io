@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>HTML MDN Basics</title>
+  <meta name="description" content="">
+  <meta name="author" content="Wei Wang">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HTML MDN Basics">
+  <meta name="twitter:description" content="">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="HTML MDN Basics">
+  <meta property="og:description" content="">
+  
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link href="/assets/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="http://localhost:4000/2017/09/HTML-MDN/">
+  <link rel="alternate" type="application/rss+xml" title="Carol" href="http://localhost:4000/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+  
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/assets/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/#blog" title="前往 Carol 的主页" class="blog-button"><img src="/assets/images/avatar.jpg" width="80" alt="Carol logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Carol" class="blog-button">Carol</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">Stay hungry stay foolish</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Carol的前端修行</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="Visit blog" class="blog-button">Blog</a></li>
+                
+              </ul>
+            </nav>
+          </div>
+          
+          <div><nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  
+
+  
+  <!-- Github -->
+  <li class="navigation__item">
+    <a href="https://github.com/beginnercarol" title="@beginnercarol 的 Github" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+  
+  
+  
+
+  
+
+  <!-- RSS -->
+  <li class="navigation__item">
+    <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+  
+  <!-- Email -->
+  <li class="navigation__item">
+    <a href="mailto:carolpangyaoyao@163.com" title="Contact me">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+  
+
+  </ul>
+</nav>
+</div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-slate"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2017-09-22 13:40:00 +0900" itemprop="datePublished" class="post-meta__date date">2017-09-22</time> &#8226; <span class="post-meta__tags tags">css,layout</span>
+    </div>
+    <h1 class="post-title">HTML MDN Basics</h1>
+  </header>
+
+  <section class="post">
+    <hr />
+
+<h4 id="block-element">Block element</h4>
+<blockquote>
+  <p>Block-level elements form a visible block on a page — they will appear on a new line from whatever content went before it, and any content that goes after it will also appear on a new line. Block-level elements tend to be <strong>structural elements</strong> on the page that represent, for example, paragraphs, lists, navigation menus, footers, etc. <strong>A block-level element wouldn’t be nested inside an inline element,</strong> but it might be nested inside another block-level element.</p>
+</blockquote>
+
+<h4 id="inline-element">Inline element</h4>
+
+<blockquote>
+  <p>Inline elements are those that are contained <strong>within</strong> block-level elements and surround only small parts of the document’s content, not entire paragraphs and groupings of content. An inline element will not cause a new line to appear in the document; they would normally appear inside a paragraph of text, for example an <code class="highlighter-rouge">&lt;a&gt;</code> element (hyperlink) or emphasis elements such as <code class="highlighter-rouge">&lt;em&gt;</code> or <code class="highlighter-rouge">&lt;strong&gt;</code>.</p>
+</blockquote>
+
+<h4 id="empty-elements">Empty elements</h4>
+
+<p>指没有两个标签,只有一个标签的元素如<code class="highlighter-rouge">&lt;img&gt;</code></p>
+
+<h4 id="atributes">Atributes</h4>
+
+<h5 id="boolean-attributes">Boolean Attributes</h5>
+
+<p>如<code class="highlighter-rouge">&lt;select multiple="multiple"&gt;</code> <code class="highlighter-rouge">&lt;input type="text" disabled="disabled"&gt;</code>可以省略=及后面的内容</p>
+
+<h4 id="head">Head</h4>
+
+<h5 id="meta">meta</h5>
+
+<p><code class="highlighter-rouge">&lt;meta charset="utf-8"&gt;</code></p>
+
+<p><code class="highlighter-rouge">name</code>:代表 meta 的类型.如:<code class="highlighter-rouge">name="author"</code>
+<code class="highlighter-rouge">content</code>:代表实际的内容,如<code class="highlighter-rouge">content="J.K. Rollin"</code></p>
+
+<p><code class="highlighter-rouge">&lt;meta name="og:title" content="MDN"&gt;</code></p>
+
+<blockquote>
+  <p>One effect of this is that when you link to MDN on facebook, the link appears along with an image and description: a richer experience for users.</p>
+</blockquote>
+
+<p>不太懂这个是起 什么作用</p>
+
+<h5 id="custom-icon">Custom icon</h5>
+<p>可以用其他格式
+放在与”index.html”同级目录下
+<code class="highlighter-rouge">&lt;link rel="shortcut icon" href="favicon.ico" type="image/x-icon"&gt;</code></p>
+
+<h4 id="lamguage">lamguage</h4>
+
+<p><code class="highlighter-rouge"><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en-US"</span><span class="nt">&gt;</span></code>
+也可以在页面内某个需要出现其它语言 的元素内指定
+<code class="highlighter-rouge">&lt;p lang="jp"&gt;....&lt;/p&gt;</code></p>
+
+<h4 id="text">Text</h4>
+<p>In HTML, every paragraph has to be wrapped in a <code class="highlighter-rouge">&lt;p&gt;</code> element
+In HTML, every heading has to be wrapped in a <code class="highlighter-rouge">&lt;h1&gt;~&lt;h6&gt;</code> element</p>
+
+<p><code class="highlighter-rouge">&lt;span&gt;</code>标签并没有语义信息,只是在想要对某个部分使用样式的时候选择用他来包裹</p>
+
+<h4 id="lists">Lists</h4>
+<p>Interesting: list-style 是存在在 padding 中的</p>
+
+<h4 id="presentational-elements">Presentational elements</h4>
+<p>没有语义信息(semantic),不推荐使用,使用 css 样式取代
+<code class="highlighter-rouge">&lt;b&gt; &lt;i&gt; &lt;u&gt;</code>在html5中有了新的含义</p>
+
+<h4 id="hyperlink">Hyperlink</h4>
+
+<ul>
+  <li>尽量使用相对路径</li>
+  <li>link 名称 简洁明了</li>
+  <li>如果是要下载 或者其他流媒体:</li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;a href="###"&gt;Download the book(PDF,10MB)&lt;/a&gt;</code>
+此外,下载的最好添加一个 <code class="highlighter-rouge">download</code>属性,以给下载的文件一个默认文件名:
+<code class="highlighter-rouge">&lt;a href="###" download="book.pdf"&gt;Download the book(PDF,10MB)&lt;/a&gt;</code></p>
+  </li>
+  <li>mailto
+<code class="highlighter-rouge">&lt;a href="mailto:carolpangyaoyao@163.com?subject='Report'&amp;body='Hello,I would like to ...'"&gt;</code></li>
+</ul>
+
+<p><a href="mailto:carolpangyaoyao@163.com?subject='Report'&amp;body='Hello,I would like to ...'">Contact ME by email</a></p>
+
+<hr />
+<h4 id="description-lists">Description lists</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;dl&gt;
+	&lt;dt&gt;Titile&lt;/dt&gt;
+	&lt;dd&gt;Description&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+</div>
+
+<h4 id="quotations">Quotations</h4>
+
+<h5 id="blockquotes">Blockquotes</h5>
+<p><code class="highlighter-rouge">&lt;blockquote cite="https://www.google.com"&gt;...&lt;/blockquote&gt;</code></p>
+
+<h5 id="inline-quote">Inline quote</h5>
+<p><code class="highlighter-rouge">&lt;q cite=""&gt;...&lt;/q&gt;</code></p>
+
+<h4 id="citations">Citations</h4>
+<p><code class="highlighter-rouge">&lt;cite&gt;</code> 作用 引用/参考
+<code class="highlighter-rouge">&lt;p&gt; This para is cited from&lt;a href="www.mdn.com"&gt;&lt;cite&gt;MDN&lt;/cite&gt;&lt;/a&gt;&lt;/p&gt;</code></p>
+
+<h4 id="abbreviations">Abbreviations</h4>
+<p><code class="highlighter-rouge">&lt;abbr title="Full Name"&gt;FN&lt;/abbr&gt;</code></p>
+
+<h4 id="address">Address</h4>
+
+<h4 id="superscript--subscript">Superscript &amp; subscript</h4>
+
+<p><code class="highlighter-rouge">&lt;sup&gt; &amp; &lt;sub&gt;</code></p>
+
+<h4 id="representing-computer-code">Representing computer code</h4>
+
+<p><code class="highlighter-rouge">&lt;code&gt;</code>: 基本的代码
+<code class="highlighter-rouge">&lt;pre&gt;</code>: 保留空格
+<code class="highlighter-rouge">&lt;var&gt;</code>: 高亮变量
+<code class="highlighter-rouge">&lt;kbd&gt;</code>: 标记键盘输入的内容
+<code class="highlighter-rouge">&lt;samp&gt;</code>:  程序输出的内容</p>
+
+<h4 id="marking-times-and-dates">Marking times and dates</h4>
+
+<p><code class="highlighter-rouge">&lt;time datetime="2017-09-22"&gt;22rd,September,2017&lt;/time&gt;</code></p>
+
+<hr />
+
+<p>效果如下:</p>
+<time datetime="2017-09-22">22rd,September,2017</time>
+
+<hr />
+<p>提供 一个 机器可以阅读的 时间, 标签内的格式不统一, 机器无法识别</p>
+
+
+  </section>
+</article>
+
+<section class="read-more">
+   
+   
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">更早的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/09/CSS-margin-auto/" title="link to CSS  margin:0 auto;">CSS  margin:0 auto;</a></h2>
+       <p class="excerpt">  想要居中 div 没那么简单  div 是块元素,默认占满整个父元素的宽度    +  margin:  0 auto; 自然就无效  照理说将 div 设置为 float,包裹后就能设置 margin,但是 auto 无效为什么?    +  auto 是相对于父元素而言的, 而父元素的 width 是由margin, border, padding 和 content 等因素决定的,如果说没有设置 div 的width,又要 margin:0 auto, 简直是又想马儿跑,又想马儿...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-09-21 13:40:00 +0900" class="post-list__meta--date date">2017-09-21</time> &#8226; <span class="post-list__meta--tags tags">css,layout</span><a class="btn-border-small" href=/2017/09/CSS-margin-auto/>继续阅读</a></div>
+   </div>
+   
+</section>
+
+<section class="post-comments">
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+    	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2017-09-23 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
+        <span class="footer__copyright">本站采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2017</span>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

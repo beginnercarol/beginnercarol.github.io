@@ -5,9 +5,178 @@
     <description>Carol的前端修行</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Sep 2017 16:49:04 +0800</pubDate>
-    <lastBuildDate>Tue, 19 Sep 2017 16:49:04 +0800</lastBuildDate>
+    <pubDate>Sat, 23 Sep 2017 09:02:41 +0800</pubDate>
+    <lastBuildDate>Sat, 23 Sep 2017 09:02:41 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>HTML MDN Basics</title>
+        <description>&lt;hr /&gt;
+
+&lt;h4 id=&quot;block-element&quot;&gt;Block element&lt;/h4&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Block-level elements form a visible block on a page — they will appear on a new line from whatever content went before it, and any content that goes after it will also appear on a new line. Block-level elements tend to be &lt;strong&gt;structural elements&lt;/strong&gt; on the page that represent, for example, paragraphs, lists, navigation menus, footers, etc. &lt;strong&gt;A block-level element wouldn’t be nested inside an inline element,&lt;/strong&gt; but it might be nested inside another block-level element.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;inline-element&quot;&gt;Inline element&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Inline elements are those that are contained &lt;strong&gt;within&lt;/strong&gt; block-level elements and surround only small parts of the document’s content, not entire paragraphs and groupings of content. An inline element will not cause a new line to appear in the document; they would normally appear inside a paragraph of text, for example an &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a&amp;gt;&lt;/code&gt; element (hyperlink) or emphasis elements such as &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;em&amp;gt;&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;empty-elements&quot;&gt;Empty elements&lt;/h4&gt;
+
+&lt;p&gt;指没有两个标签,只有一个标签的元素如&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;img&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;atributes&quot;&gt;Atributes&lt;/h4&gt;
+
+&lt;h5 id=&quot;boolean-attributes&quot;&gt;Boolean Attributes&lt;/h5&gt;
+
+&lt;p&gt;如&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;select multiple=&quot;multiple&quot;&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;input type=&quot;text&quot; disabled=&quot;disabled&quot;&amp;gt;&lt;/code&gt;可以省略=及后面的内容&lt;/p&gt;
+
+&lt;h4 id=&quot;head&quot;&gt;Head&lt;/h4&gt;
+
+&lt;h5 id=&quot;meta&quot;&gt;meta&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;:代表 meta 的类型.如:&lt;code class=&quot;highlighter-rouge&quot;&gt;name=&quot;author&quot;&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;content&lt;/code&gt;:代表实际的内容,如&lt;code class=&quot;highlighter-rouge&quot;&gt;content=&quot;J.K. Rollin&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;meta name=&quot;og:title&quot; content=&quot;MDN&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;One effect of this is that when you link to MDN on facebook, the link appears along with an image and description: a richer experience for users.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;不太懂这个是起 什么作用&lt;/p&gt;
+
+&lt;h5 id=&quot;custom-icon&quot;&gt;Custom icon&lt;/h5&gt;
+&lt;p&gt;可以用其他格式
+放在与”index.html”同级目录下
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;lamguage&quot;&gt;lamguage&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en-US&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;
+也可以在页面内某个需要出现其它语言 的元素内指定
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p lang=&quot;jp&quot;&amp;gt;....&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;text&quot;&gt;Text&lt;/h4&gt;
+&lt;p&gt;In HTML, every paragraph has to be wrapped in a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt;&lt;/code&gt; element
+In HTML, every heading has to be wrapped in a &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt;~&amp;lt;h6&amp;gt;&lt;/code&gt; element&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;span&amp;gt;&lt;/code&gt;标签并没有语义信息,只是在想要对某个部分使用样式的时候选择用他来包裹&lt;/p&gt;
+
+&lt;h4 id=&quot;lists&quot;&gt;Lists&lt;/h4&gt;
+&lt;p&gt;Interesting: list-style 是存在在 padding 中的&lt;/p&gt;
+
+&lt;h4 id=&quot;presentational-elements&quot;&gt;Presentational elements&lt;/h4&gt;
+&lt;p&gt;没有语义信息(semantic),不推荐使用,使用 css 样式取代
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;b&amp;gt; &amp;lt;i&amp;gt; &amp;lt;u&amp;gt;&lt;/code&gt;在html5中有了新的含义&lt;/p&gt;
+
+&lt;h4 id=&quot;hyperlink&quot;&gt;Hyperlink&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;尽量使用相对路径&lt;/li&gt;
+  &lt;li&gt;link 名称 简洁明了&lt;/li&gt;
+  &lt;li&gt;如果是要下载 或者其他流媒体:&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a href=&quot;###&quot;&amp;gt;Download the book(PDF,10MB)&amp;lt;/a&amp;gt;&lt;/code&gt;
+此外,下载的最好添加一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;download&lt;/code&gt;属性,以给下载的文件一个默认文件名:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a href=&quot;###&quot; download=&quot;book.pdf&quot;&amp;gt;Download the book(PDF,10MB)&amp;lt;/a&amp;gt;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;mailto
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;a href=&quot;mailto:carolpangyaoyao@163.com?subject='Report'&amp;amp;body='Hello,I would like to ...'&quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;mailto:carolpangyaoyao@163.com?subject='Report'&amp;amp;body='Hello,I would like to ...'&quot;&gt;Contact ME by email&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h4 id=&quot;description-lists&quot;&gt;Description lists&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;dl&amp;gt;
+	&amp;lt;dt&amp;gt;Titile&amp;lt;/dt&amp;gt;
+	&amp;lt;dd&amp;gt;Description&amp;lt;/dd&amp;gt;
+&amp;lt;/dl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;quotations&quot;&gt;Quotations&lt;/h4&gt;
+
+&lt;h5 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;/h5&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;blockquote cite=&quot;https://www.google.com&quot;&amp;gt;...&amp;lt;/blockquote&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h5 id=&quot;inline-quote&quot;&gt;Inline quote&lt;/h5&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;q cite=&quot;&quot;&amp;gt;...&amp;lt;/q&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;citations&quot;&gt;Citations&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;cite&amp;gt;&lt;/code&gt; 作用 引用/参考
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p&amp;gt; This para is cited from&amp;lt;a href=&quot;www.mdn.com&quot;&amp;gt;&amp;lt;cite&amp;gt;MDN&amp;lt;/cite&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;abbreviations&quot;&gt;Abbreviations&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;abbr title=&quot;Full Name&quot;&amp;gt;FN&amp;lt;/abbr&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;address&quot;&gt;Address&lt;/h4&gt;
+
+&lt;h4 id=&quot;superscript--subscript&quot;&gt;Superscript &amp;amp; subscript&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;sup&amp;gt; &amp;amp; &amp;lt;sub&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;representing-computer-code&quot;&gt;Representing computer code&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;code&amp;gt;&lt;/code&gt;: 基本的代码
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;: 保留空格
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;var&amp;gt;&lt;/code&gt;: 高亮变量
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;kbd&amp;gt;&lt;/code&gt;: 标记键盘输入的内容
+&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;samp&amp;gt;&lt;/code&gt;:  程序输出的内容&lt;/p&gt;
+
+&lt;h4 id=&quot;marking-times-and-dates&quot;&gt;Marking times and dates&lt;/h4&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;time datetime=&quot;2017-09-22&quot;&amp;gt;22rd,September,2017&amp;lt;/time&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;效果如下:&lt;/p&gt;
+&lt;time datetime=&quot;2017-09-22&quot;&gt;22rd,September,2017&lt;/time&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;提供 一个 机器可以阅读的 时间, 标签内的格式不统一, 机器无法识别&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 22 Sep 2017 12:40:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/HTML-MDN/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/HTML-MDN/</guid>
+        
+        <category>css</category>
+        
+        <category>,layout</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CSS  margin:0 auto;</title>
+        <description>&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;想要居中 div 没那么简单&lt;/li&gt;
+  &lt;li&gt;div 是块元素,默认占满整个父元素的宽度
+    +  &lt;code class=&quot;highlighter-rouge&quot;&gt;margin:  0 auto;&lt;/code&gt; 自然就无效&lt;/li&gt;
+  &lt;li&gt;照理说将 div 设置为 float,包裹后就能设置 margin,但是 auto 无效为什么?
+    +  auto 是相对于父元素而言的, 而父元素的 width 是由margin, border, padding 和 content 等因素决定的,如果说没有设置 div 的width,又要 margin:0 auto, 简直是又想马儿跑,又想马儿不吃草!&lt;/li&gt;
+  &lt;li&gt;增加 float 更糟糕,元素具有了包裹性,脱离标准流,没有了可供参考的父元素宽度&lt;/li&gt;
+  &lt;li&gt;以及 &lt;code class=&quot;highlighter-rouge&quot;&gt;text-align: center&lt;/code&gt;的居中方式不是说使得 div 居中,而是 div 的内容居中&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 21 Sep 2017 12:40:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/CSS-margin-auto/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/CSS-margin-auto/</guid>
+        
+        <category>css</category>
+        
+        <category>,layout</category>
+        
+        
+      </item>
     
       <item>
         <title>CSS  圣杯布局</title>
@@ -58,7 +227,8 @@
 &lt;span class=&quot;nc&quot;&gt;.right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;/* margin-right:-150px;*/&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;-150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;nc&quot;&gt;.footer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;both&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -83,6 +253,18 @@
   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;与&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nc&quot;&gt;.right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-150px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;pink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;效果是一样的!!下面使用 margin-right 减少了两行设置,且 min-width 可以减少一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;.right&lt;/code&gt;的宽度.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 19 Sep 2017 15:46:00 +0800</pubDate>

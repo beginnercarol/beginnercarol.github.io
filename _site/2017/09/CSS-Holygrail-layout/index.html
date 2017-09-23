@@ -175,7 +175,8 @@
 <span class="nc">.right</span><span class="p">{</span>
   <span class="nl">width</span><span class="p">:</span><span class="m">150px</span><span class="p">;</span>
   <span class="nl">background-color</span><span class="p">:</span><span class="no">pink</span><span class="p">;</span>
-  <span class="nl">margin-right</span><span class="p">:</span><span class="m">-150px</span><span class="p">;</span>
+  <span class="c">/* margin-right:-150px;*/</span>
+  <span class="nl">margin-left</span><span class="p">:</span><span class="m">-150px</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.footer</span><span class="p">{</span>
   <span class="nl">clear</span><span class="p">:</span><span class="nb">both</span><span class="p">;</span>
@@ -201,11 +202,31 @@
 </code></pre>
 </div>
 
+<p>与</p>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nc">.right</span><span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">150px</span><span class="p">;</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="m">-150px</span><span class="p">;</span>
+    <span class="nl">background-color</span><span class="p">:</span><span class="no">pink</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre>
+</div>
+
+<p>效果是一样的!!下面使用 margin-right 减少了两行设置,且 min-width 可以减少一个 <code class="highlighter-rouge">.right</code>的宽度.</p>
+
 
   </section>
 </article>
 
 <section class="read-more">
+   
+   
+   <div class="read-more-item">
+       <span class="read-more-item-dim">最近的文章</span>
+       <h2 class="post-list__post-title post-title"><a href="/2017/09/CSS-margin-auto/" title="link to CSS  margin:0 auto;">CSS  margin:0 auto;</a></h2>
+       <p class="excerpt">  想要居中 div 没那么简单  div 是块元素,默认占满整个父元素的宽度    +  margin:  0 auto; 自然就无效  照理说将 div 设置为 float,包裹后就能设置 margin,但是 auto 无效为什么?    +  auto 是相对于父元素而言的, 而父元素的 width 是由margin, border, padding 和 content 等因素决定的,如果说没有设置 div 的width,又要 margin:0 auto, 简直是又想马儿跑,又想马儿...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-09-21 13:40:00 +0900" class="post-list__meta--date date">2017-09-21</time> &#8226; <span class="post-list__meta--tags tags">css,layout</span><a class="btn-border-small" href=/2017/09/CSS-margin-auto/>继续阅读</a></div>
+   </div>
    
    
    
@@ -230,7 +251,7 @@
             <section class="footer">
     <footer>
     	<span class="footer__copyright">本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享 署名-非商业性使用-相同方式共享 4.0 国际 许可协议</a></span>
-        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2017-09-19 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
+        <span class="footer__copyright">由 <a href="https://jekyllrb.com">Jekyll</a> 于 2017-09-23 生成，感谢 <a href="https://www.digitalocean.com/?refcode=30ed2d146762">Digital Ocean</a> 为本站提供稳定的 VPS 服务</span>
         <span class="footer__copyright">本站采用 <a href="https://github.com/onevcat/vno-jekyll">Vno - Jekyll</a> 作为主题，您可以在 GitHub 找到<a href="https://github.com/onevcat/OneV-s-Den">本站源码</a> - &copy; 2017</span>
     </footer>
 </section>
