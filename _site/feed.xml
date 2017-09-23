@@ -5,9 +5,64 @@
     <description>Carol的前端修行</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Sep 2017 09:02:41 +0800</pubDate>
-    <lastBuildDate>Sat, 23 Sep 2017 09:02:41 +0800</lastBuildDate>
+    <pubDate>Sat, 23 Sep 2017 11:44:47 +0800</pubDate>
+    <lastBuildDate>Sat, 23 Sep 2017 11:44:47 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>CSS flaot+absolute</title>
+        <description>&lt;hr /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sidebar{
+	float:right;/* 两行无所谓先后 */
+	position: absolute;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;设置为 right 更为直观, 可以看到 float “失效了”&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sidebar{
+	float:right;/* 两行无所谓先后 */
+	position:  relative;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;修改为relative 之后,float 并不失效,而是根据浮动后的位置再进行 relative 定位.
+一般用于把 在下一行的元素提到上一行来&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;之前提到&lt;a href=&quot;https://www.evernote.com/shard/s245/nl/50832658/1ea54eee-d03a-495c-8b80-66d929621789/&quot;&gt;float 元素,百分值不适用&lt;/a&gt;
+因此但凡这个元素是 float,就不能用百分值设置长和宽
+***”&amp;gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 23 Sep 2017 10:42:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/css-float+absolute/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/css-float+absolute/</guid>
+        
+        <category>css</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CSS flaot 百分比</title>
+        <description>&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.w3.org/TR/CSS22/visuren.html#floats&quot;&gt;W3 css&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;对于 float 而言, percentage 是&lt;strong&gt;不适用&lt;/strong&gt;的!!!!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 23 Sep 2017 09:52:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/css-float/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/css-float/</guid>
+        
+        <category>css</category>
+        
+        
+      </item>
     
       <item>
         <title>HTML MDN Basics</title>

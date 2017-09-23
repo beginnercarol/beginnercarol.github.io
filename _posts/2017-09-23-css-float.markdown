@@ -1,0 +1,12 @@
+---
+layout: post
+title: CSS flaot 百分比
+date: 2017-09-23 10:52:00.000000000 +09:00
+tags: css
+---
+
+***
+
+[W3 css](https://www.w3.org/TR/CSS22/visuren.html#floats)
+
+对于 float 而言, percentage 是**不适用**的!!!!
