@@ -1,0 +1,64 @@
+---
+layout: post
+title: CSS 载入图片等宽等高
+date: 2017-09-26 23:31:00.000000000 +09:00
+tags: css , img
+---
+
+***
+
+    + 需要一个父元素(height)
+	+ 以及重中之重:
+		+ absolute 定位百分比是相对于 padding box
+		+ 因为!!!**定位是相对于 border 定位**的!!!!
+		+ 不设置 left/right/top/bottom 时默认在原来位置(content box)不移动,因此误以为是抵住 padding,其实不是的!并且无视 padding!!!
+
+```
+<div class="img-equal">
+	<img src="" alt="" />
+</div>
+```
+
+```css
+.img-equal{
+  position:relative;
+  width:50%;/*本身是一个 block,因此剩下的一部分就变成 margin 了*/
+  height:0;
+  padding-bottom:50%;
+}
+img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+```
+
+***
+
++ 真的酷, absolutely 定位的元素其 containing block 是相对于 padding 的!
++ 但是插入图片后,padding 去哪里了??(被图片覆盖了)
++ 另外,block 元素即使定了 width,剩余部分会自动变成 **margin** , 因为是占据一行的元素
+***
+另一种利用伪类的:
+[Pseudo-calss :befor & :after](https://www.evernote.com/shard/s245/nl/50832658/c4dd1d9c-a57b-47ef-a054-ebbc109b1a25/)
+
+```css
+.img-equal{
+	position: relative;
+	width:20%;
+}
+.img-equal:before{
+	content:"";
+	display: block;
+	padding-top:100%;/*相对于父元素的 width~~~*/
+}
+img{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+```

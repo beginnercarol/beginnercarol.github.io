@@ -5,12 +5,74 @@
     <description>Carol的前端修行</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Sep 2017 15:57:07 +0800</pubDate>
-    <lastBuildDate>Sat, 23 Sep 2017 15:57:07 +0800</lastBuildDate>
+    <pubDate>Sun, 24 Sep 2017 09:23:45 +0800</pubDate>
+    <lastBuildDate>Sun, 24 Sep 2017 09:23:45 +0800</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
-        <title>CSS flaot+absolute</title>
+        <title>CSS margin+percentage</title>
+        <description>&lt;hr /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div class=&quot;container&quot;&amp;gt;
+	&amp;lt;main&amp;gt;&amp;lt;/main&amp;gt;
+	&amp;lt;sidebar class=&quot;left&quot;&amp;gt;&amp;lt;/sidebar&amp;gt;
+	&amp;lt;sidebar class=&quot;right&quot;&amp;gt;&amp;lt;/sidebar&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*{
+	padding:0;
+	margin:0;
+}
+
+.container{
+	width:100%;
+	height:800px;
+	padding-left:200px;
+	padding-right:150px;
+}
+
+main{
+	width:100%;
+	height:800px;
+	background-color:#ddd;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;main 继承 container 的 &lt;strong&gt;width&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;当 container 不设置&lt;code class=&quot;highlighter-rouge&quot;&gt;width:100%&lt;/code&gt;时 :
+main 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;width:100%&lt;/code&gt;是 container 继承 html 的100%width 再减去 padding-left 和 padding-right 之后的宽度&lt;/li&gt;
+  &lt;li&gt;当 container 设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;width:100%&lt;/code&gt;:
+那么 padding-left 和 padding-right 是额外增加的宽度(由于没有设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;box-sizing:border-box&lt;/code&gt;)因此,main 的&lt;code class=&quot;highlighter-rouge&quot;&gt;width:100%&lt;/code&gt; 就是 container width 的100%(直观来讲就是更宽了)&lt;/li&gt;
+  &lt;li&gt;增加一项&lt;code class=&quot;highlighter-rouge&quot;&gt;*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}&lt;/code&gt;之后就不会有区别了.因为 width 变成了
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;border+padding+content&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+</description>
+        <pubDate>Sun, 24 Sep 2017 08:21:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/09/css-margin-percentage/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/09/css-margin-percentage/</guid>
+        
+        <category>css</category>
+        
+        <category>,</category>
+        
+        <category>margin</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CSS float+absolute</title>
         <description>&lt;hr /&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sidebar{
@@ -711,56 +773,6 @@ code：&lt;/p&gt;
         <guid isPermaLink="true">http://localhost:4000/2017/09/FCC-smallesCommonMultiple/</guid>
         
         <category>fcc</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>CSS Flex 布局</title>
-        <description>&lt;hr /&gt;
-&lt;ul&gt;
-  &lt;li&gt;容器 + 项目(item)&lt;/li&gt;
-  &lt;li&gt;项目的 &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;vertical-align&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;clear&lt;/code&gt;失效&lt;/li&gt;
-  &lt;li&gt;默认两根轴: main axis (水平), cross axis(垂直),方向可以更改&lt;/li&gt;
-  &lt;li&gt;容器的属性:
-    &lt;ol&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-direction&lt;/code&gt;主轴的方向:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;row&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;row-reverse&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;column&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;column-reverse&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-wrap&lt;/code&gt;换行的方式:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;nowrap&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;wrap&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;wrap-reverse&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-flow&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;justify-content&lt;/code&gt;项目在主轴上的对齐方式:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-start&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-end&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;center&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;space-between&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;space-around&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;align-items&lt;/code&gt; 项目在交叉轴上如何对齐:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-start&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-end&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;center&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;space-between&lt;/code&gt;,&lt;code class=&quot;highlighter-rouge&quot;&gt;space-around&lt;/code&gt;
-        &lt;ol&gt;
-          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;align-content&lt;/code&gt;多根轴线对齐方式(???)&lt;/li&gt;
-        &lt;/ol&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;项目的属性:
-    &lt;ol&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;order:integer&lt;/code&gt;
-项目的排列顺序,数字越小排列越靠前,可以为负数&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-grow:&lt;/code&gt;
-允许项目变大.默认为0,全为1则平分&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-shrink:&lt;/code&gt;
-允许项目变小,默认为1&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flex-basis:&lt;/code&gt;
-定义在分配多余主轴空间之前,项目占据的主轴空间,可以像&lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt;一样设定,占据固定空间,设为&lt;code class=&quot;highlighter-rouge&quot;&gt;auto&lt;/code&gt;则为项目本来大小&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flex&lt;/code&gt;是上面三个的简写形式 默认 0 1 auto&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;align-self&lt;/code&gt;允许单个项目拥有不同于容器定义的&lt;code class=&quot;highlighter-rouge&quot;&gt;align-item&lt;/code&gt;,值同&lt;code class=&quot;highlighter-rouge&quot;&gt;align-item&lt;/code&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Fri, 15 Sep 2017 23:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/09/CSS-flex/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/CSS-flex/</guid>
-        
-        <category>css</category>
         
         
       </item>

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CSS flaot+absolute
+title: CSS float+absolute
 date: 2017-09-23 11:42:00.000000000 +09:00
 tags: css
 ---

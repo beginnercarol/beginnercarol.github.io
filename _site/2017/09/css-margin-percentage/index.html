@@ -6,16 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>CSS flaot 百分比</title>
+  <title>CSS margin+percentage</title>
   <meta name="description" content="">
   <meta name="author" content="Wei Wang">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="CSS flaot 百分比">
+  <meta name="twitter:title" content="CSS margin+percentage">
   <meta name="twitter:description" content="">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="CSS flaot 百分比">
+  <meta property="og:title" content="CSS margin+percentage">
   <meta property="og:description" content="">
   
   <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/2017/09/css-float/">
+  <link rel="canonical" href="http://localhost:4000/2017/09/css-margin-percentage/">
   <link rel="alternate" type="application/rss+xml" title="Carol" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -122,17 +122,58 @@
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2017-09-23 10:52:00 +0900" itemprop="datePublished" class="post-meta__date date">2017-09-23</time> &#8226; <span class="post-meta__tags tags">css</span>
+      <time datetime="2017-09-24 09:21:00 +0900" itemprop="datePublished" class="post-meta__date date">2017-09-24</time> &#8226; <span class="post-meta__tags tags">css,margin</span>
     </div>
-    <h1 class="post-title">CSS flaot 百分比</h1>
+    <h1 class="post-title">CSS margin+percentage</h1>
   </header>
 
   <section class="post">
     <hr />
 
-<p><a href="https://www.w3.org/TR/CSS22/visuren.html#floats">W3 css</a></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div class="container"&gt;
+	&lt;main&gt;&lt;/main&gt;
+	&lt;sidebar class="left"&gt;&lt;/sidebar&gt;
+	&lt;sidebar class="right"&gt;&lt;/sidebar&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
 
-<p>对于 float 而言, percentage 是<strong>不适用</strong>的!!!!</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>*{
+	padding:0;
+	margin:0;
+}
+
+.container{
+	width:100%;
+	height:800px;
+	padding-left:200px;
+	padding-right:150px;
+}
+
+main{
+	width:100%;
+	height:800px;
+	background-color:#ddd;
+}
+</code></pre>
+</div>
+
+<hr />
+<p>main 继承 container 的 <strong>width</strong></p>
+<ul>
+  <li>当 container 不设置<code class="highlighter-rouge">width:100%</code>时 :
+main 的 <code class="highlighter-rouge">width:100%</code>是 container 继承 html 的100%width 再减去 padding-left 和 padding-right 之后的宽度</li>
+  <li>当 container 设置为<code class="highlighter-rouge">width:100%</code>:
+那么 padding-left 和 padding-right 是额外增加的宽度(由于没有设置为<code class="highlighter-rouge">box-sizing:border-box</code>)因此,main 的<code class="highlighter-rouge">width:100%</code> 就是 container width 的100%(直观来讲就是更宽了)</li>
+  <li>增加一项<code class="highlighter-rouge">*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}</code>之后就不会有区别了.因为 width 变成了
+ <code class="highlighter-rouge">border+padding+content</code></li>
+</ul>
+
+<hr />
 
   </section>
 </article>
@@ -140,21 +181,13 @@
 <section class="read-more">
    
    
-   <div class="read-more-item">
-       <span class="read-more-item-dim">最近的文章</span>
-       <h2 class="post-list__post-title post-title"><a href="/2017/09/css-float+absolute/" title="link to CSS float+absolute">CSS float+absolute</a></h2>
-       <p class="excerpt">sidebar{	float:right;/* 两行无所谓先后 */	position: absolute;}设置为 right 更为直观, 可以看到 float “失效了”sidebar{	float:right;/* 两行无所谓先后 */	position:  relative;}修改为relative 之后,float 并不失效,而是根据浮动后的位置再进行 relative 定位.一般用于把 在下一行的元素提到上一行来之前提到float 元素,百分值不适用因此但凡这个元素是 floa...&hellip;</p>
-       <div class="post-list__meta"><time datetime="2017-09-23 11:42:00 +0900" class="post-list__meta--date date">2017-09-23</time> &#8226; <span class="post-list__meta--tags tags">css</span><a class="btn-border-small" href=/2017/09/css-float+absolute/>继续阅读</a></div>
-   </div>
-   
-   
    
    
    <div class="read-more-item">
        <span class="read-more-item-dim">更早的文章</span>
-       <h2 class="post-list__post-title post-title"><a href="/2017/09/HTML-MDN/" title="link to HTML MDN Basics">HTML MDN Basics</a></h2>
-       <p class="excerpt">Block element  Block-level elements form a visible block on a page — they will appear on a new line from whatever content went before it, and any content that goes after it will also appear on a new line. Block-level elements tend to be structural...&hellip;</p>
-       <div class="post-list__meta"><time datetime="2017-09-22 13:40:00 +0900" class="post-list__meta--date date">2017-09-22</time> &#8226; <span class="post-list__meta--tags tags">css,layout</span><a class="btn-border-small" href=/2017/09/HTML-MDN/>继续阅读</a></div>
+       <h2 class="post-list__post-title post-title"><a href="/2017/09/css-float+absolute/" title="link to CSS float+absolute">CSS float+absolute</a></h2>
+       <p class="excerpt">sidebar{	float:right;/* 两行无所谓先后 */	position: absolute;}设置为 right 更为直观, 可以看到 float “失效了”sidebar{	float:right;/* 两行无所谓先后 */	position:  relative;}修改为relative 之后,float 并不失效,而是根据浮动后的位置再进行 relative 定位.一般用于把 在下一行的元素提到上一行来之前提到float 元素,百分值不适用因此但凡这个元素是 floa...&hellip;</p>
+       <div class="post-list__meta"><time datetime="2017-09-23 11:42:00 +0900" class="post-list__meta--date date">2017-09-23</time> &#8226; <span class="post-list__meta--tags tags">css</span><a class="btn-border-small" href=/2017/09/css-float+absolute/>继续阅读</a></div>
    </div>
    
 </section>
